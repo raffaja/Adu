@@ -7,64 +7,67 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #000;
+      background-color: #111;
       color: #fff;
       margin: 0;
       padding: 0;
     }
     header {
+      background: #000;
+      padding: 15px;
       text-align: center;
-      padding: 20px;
-      background: #111;
       font-size: 22px;
       font-weight: bold;
+      color: #f90;
     }
     .container {
-      max-width: 600px;
-      margin: 20px auto;
       padding: 20px;
-      background: #111;
+    }
+    .section {
+      background: #1c1c1c;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255,255,255,0.1);
-    }
-    .payment-box {
-      border: 1px solid #fff;
-      border-radius: 8px;
+      margin-bottom: 15px;
       padding: 15px;
-      margin-bottom: 20px;
     }
-    .title {
-      font-size: 18px;
-      font-weight: bold;
-      margin-bottom: 8px;
+    .section h3 {
+      margin: 0 0 10px;
+      color: #f90;
     }
-    .info {
-      margin: 5px 0;
+    .payment-option {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
     }
-    .btn {
-      display: block;
+    .payment-option span {
+      background: #333;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    .form {
+      margin-top: 20px;
+    }
+    .form input {
       width: 100%;
-      text-align: center;
-      padding: 12px;
-      margin-top: 15px;
+      padding: 10px;
+      margin: 8px 0;
       border: none;
       border-radius: 6px;
-      background: #fff;
+      font-size: 14px;
+    }
+    .btn {
+      width: 100%;
+      background: #f90;
       color: #000;
+      padding: 12px;
       font-size: 16px;
-      font-weight: bold;
+      border: none;
+      border-radius: 8px;
       cursor: pointer;
-      transition: 0.3s;
+      font-weight: bold;
     }
     .btn:hover {
-      background: #888;
-      color: #fff;
-    }
-    footer {
-      text-align: center;
-      padding: 15px;
-      font-size: 14px;
-      color: #aaa;
+      background: #ffb733;
     }
   </style>
 </head>
@@ -73,32 +76,49 @@
 <header>PAYMENT BY RAFFSTR</header>
 
 <div class="container">
-  
-  <div class="payment-box">
-    <div class="title">Dana</div>
-    <div class="info">Nomor: <b>083867468118</b></div>
-    <div class="info">Nama: <b>Lip</b></div>
-    <button class="btn" onclick="copyText('083867468118')">Salin Nomor</button>
+
+  <div class="section">
+    <h3>QRIS (All Payment)</h3>
+    <div class="payment-option">
+      <span>QRIS</span>
+    </div>
   </div>
 
-  <div class="payment-box">
-    <div class="title">Gopay</div>
-    <div class="info">Nomor: <b>083893476377</b></div>
-    <div class="info">Nama: <b>RAFFSTR</b></div>
-    <button class="btn" onclick="copyText('083893476377')">Salin Nomor</button>
+  <div class="section">
+    <h3>E-Wallet</h3>
+    <div class="payment-option">
+      <span>OVO</span>
+      <span>ShopeePay</span>
+      <span>DANA</span>
+      <span>LinkAja</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Virtual Account</h3>
+    <div class="payment-option">
+      <span>Mandiri</span>
+      <span>BCA</span>
+      <span>BNI</span>
+      <span>BRI</span>
+    </div>
+  </div>
+
+  <div class="section">
+    <h3>Convenience Store</h3>
+    <div class="payment-option">
+      <span>Indomaret</span>
+      <span>Alfamart</span>
+    </div>
+  </div>
+
+  <div class="form">
+    <input type="text" placeholder="Masukkan Nomor Telepon Anda">
+    <input type="number" placeholder="Masukkan Nominal Uang">
+    <button class="btn">Bayar Sekarang</button>
   </div>
 
 </div>
-
-<footer>© 2025 RAFFSTR Payment</footer>
-
-<script>
-  function copyText(text) {
-    navigator.clipboard.writeText(text).then(() => {
-      alert("Nomor berhasil disalin: " + text);
-    });
-  }
-</script>
 
 </body>
 </html>
